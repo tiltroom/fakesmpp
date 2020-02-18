@@ -4,7 +4,7 @@ FROM node:10
 WORKDIR /usr/src/app
 
 COPY packgage.json ./
-COPY yarn.lock
+COPY yarn.lock ./
 
 RUN yarn install
 
