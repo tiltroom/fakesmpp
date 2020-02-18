@@ -15,7 +15,7 @@ Required node packages:
 ##Install
 
 ```bash
-git clone https://github.com/viktor-br/fakesmpp.git
+https://github.com/tiltroom/fakesmpp.git
 cd [folder with fakesmpp code]
 npm install smpp winston strftime optimist
 ```
