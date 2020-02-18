@@ -5,12 +5,12 @@ Simple fake SMPP server based on node.js smpp package (https://www.npmjs.com/pac
 ESME (by default system_id=user and password=pass, but you can use --auth option to set up your own parameters). By default server request ESME with deliver_sm 
 (message delivered) successed just after submit_sm request from ESME, but you can manage time delay and statuses of the answer.
 
-Required node packages:
+Required node v12.4.0 packages:
 
-- smpp -- SMPP realisation 
-- winston -- logging
-- strftime -- date format
-- optimistic -- command options
+- smpp 0.4.0 -- SMPP realisation 
+- winston 3.2.1 -- logging
+- strftime 0.10.0 -- date format
+- optimistic 0.6.1 -- command options
 
 ##Install
 
