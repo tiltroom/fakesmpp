@@ -32,10 +32,8 @@ node smpp.js --port=2775 --ddmin=5000 --ddmax=10000 --auth=user:pass,u1:pass1,u2
 ```
 
 ##Docker
+```bash 
 1. cd [folder with fakesmpp code]
-2. ```bash 
-docker build .
-```
-2. ```bash 
-docker run -p [port of choice]:2775 -d [image hash obtained from buid]
+2. docker build .
+3. docker run -p [port of choice]:2775 -d [image hash obtained from buid]
 ```
