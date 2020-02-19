@@ -11,4 +11,4 @@ RUN yarn install
 COPY . .
 
 EXPOSE 2775
-CMD ["yarn", "start"]
+CMD ["yarn", "default"]
