@@ -1,39 +1,71 @@
+
 fakesmpp
+
 ========
 
-Simple fake SMPP server based on node.js smpp package (https://www.npmjs.com/package/smpp). By default server listen port 2775. It able to authorize
-ESME (by default system_id=user and password=pass, but you can use --auth option to set up your own parameters). By default server request ESME with deliver_sm 
-(message delivered) successed just after submit_sm request from ESME, but you can manage time delay and statuses of the answer.
 
-Required node v12.4.0 packages:
+Simple fake SMPP server based on node.js smpp package
 
-- smpp 0.4.0 -- SMPP realisation 
-- winston 3.2.1 -- logging
-- strftime 0.10.0 -- date format
-- optimist 0.6.1 -- command options
+__The app supports ESME complinat auth, ACK and responses.__
 
-##Install
 
-```bash
+## Auth
+_--system_id [your-username]_
+_--password [your-password]_
+
+By default __system_id=username__ and __password=password__
+
+
+## Port
+_--port [port]_
+
+By default __port=2775__
+
+
+## Status
+_--status [status]_
+A full list is available in __smpp.js__
+
+By default __status=delivered__
+
+
+## Delays
+_--ddmin [seconds for minimum delay]_
+_--ddmax [seconds for maximum delay]_
+
+By default __ddmin=0__ and __ddmax=0__
+
+
+## Logs
+Logs are saved in __/var/log/fakesmpp.log__ and app console.
+
+
+# Install
+Note: This project uses yarn instead of npm.
+
+## Classic
+```
 git clone https://github.com/tiltroom/fakesmpp.git
-cd [folder with fakesmpp code]
+cd fakesmpp
 yarn install
 ```
 
-##Usage
-1. Listen 2775 port and always answer Ok status (DELIVRD) and authorize user (service_id) with pass password
-```bash
+Start the app with default setting with one of the commands below:
+```
+yarn start
 node smpp.js
 ```
-2. Listen 9999 port with delay between 5 and 10 seconds for message delivered (deliver_sm) request to ESME and return iterated one by one statuses (delivered, then status expired, then delivered again and so on). u1 (service_id) with password pass1 and u2 with password pass2 will be authorized on SMPP server.
-You can find available status values list in statuses.js.
-```bash
-node smpp.js --port=2775 --ddmin=5000 --ddmax=10000 --auth=user:pass,u1:pass1,u2:pass2 --statuses=delivered,expired,spam_rejected
+
+Start the app with custom settings (all the params are optional):
+```
+node smpp.js --port [port] --ddmin [s] --ddmax [s] --status [status] --system_id [username] --password [password]
 ```
 
-##Docker
-```bash 
-1. cd [folder with fakesmpp code]
-2. docker build .
-3. docker run -p [port of choice]:2775 -d [image hash obtained from buid]
+
+## Docker
+```
+git clone https://github.com/tiltroom/fakesmpp.git
+cd fakesmpp
+docker build .
+docker run -p [port of choice]:2775 -d [build hash]
 ```

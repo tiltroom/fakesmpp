@@ -1,16 +1,18 @@
 {
   "name": "fakesmpp_docker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "FakeSMPP Server",
   "author": "@tiltroom",
+  "license": "MIT",
   "main": "smpp.js",
   "scripts": {
-    "start": "node smpp.js --port=2775 --ddmin=5000 --ddmax=15000"
+    "default": "node smpp.js --port=2775 --ddmin=5000 --ddmax=15000",
+    "start": "node smpp.js"
   },
   "dependencies": {
+    "minimist": "^1.2.0",
     "smpp": "^0.4.0",
-    "winston": "^3.2.1 ",
     "strftime": "^0.10.0",
-    "optimist": "^0.6.1"
+    "winston": "^3.2.1 "
   }
 }
