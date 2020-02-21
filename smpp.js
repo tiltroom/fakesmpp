@@ -165,9 +165,9 @@ function getDeliveryDelay() {
 
 function checkAsyncUserPass(system_id, password, func) {
   if (system_id == argv.system_id && password == argv.password) {
-    func(false);
-  } else {
     func(true);
+  } else {
+    func(false);
   }
 }
 
