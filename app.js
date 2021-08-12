@@ -21,12 +21,12 @@ const statuses = {
 };
 
 const settings = {
-  port: process.env.PORT || 2775,
-  ddmin: process.env.DDMIN || 0,
-  ddmax: process.env.DDMAX || 0,
-  status: process.env.STATUS || 'delivered',
-  system_id: process.env.ESME_USERNAME || 'username',
-  password: process.env.PASSWORD || 'password',
+  port: process.env.PORT || 2775, // smpp server port
+  ddmin: process.env.DDMIN || 0, // min delay in seconds
+  ddmax: process.env.DDMAX || 0, // max delay in seconds
+  status: process.env.STATUS || 'delivered', // refer to statuses object
+  system_id: process.env.ESME_USERNAME || 'username', // eseme username
+  password: process.env.PASSWORD || 'password', // esme password
 };
 
 // Settings validation
