@@ -69,10 +69,6 @@ const server = smpp.createServer((session) => {
   session.on('bind_transceiver', (pdu) => {
     logger.info(`TRX bind requested by ${pdu.system_id}`);
     session.pause();
-    console.info('🚀 ~ file: app.js ~ line 73 ~ session.on ~ pdu.password', pdu.password);
-    console.log('🚀 ~ file: app.js ~ line 73 ~ session.on ~ pdu.system_id', pdu.system_id);
-    console.log('🚀 ~ file: app.js ~ line 73 ~ session.on ~ settings.password', settings.password);
-    console.log('🚀 ~ file: app.js ~ line 73 ~ session.on ~ settings.system_id', settings.system_id);
     if (pdu.system_id === settings.system_id && pdu.password === settings.password) {
       logger.info(`TRX bind succedeed for ${pdu.system_id}`);
       session.send(pdu.response());
