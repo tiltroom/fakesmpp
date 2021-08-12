@@ -6,13 +6,17 @@
   "license": "MIT",
   "main": "smpp.js",
   "scripts": {
-    "default": "node smpp.js --port=2775 --ddmin=5000 --ddmax=15000",
-    "start": "node smpp.js"
+    "start": "node app.js"
   },
   "dependencies": {
-    "minimist": "^1.2.0",
-    "smpp": "^0.4.0",
+    "pino": "^6.13.0",
+    "smpp": "^0.5.0",
     "strftime": "^0.10.0",
-    "winston": "^3.2.1 "
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }

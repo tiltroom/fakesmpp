@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:16.2.0-alpine
 
 WORKDIR /usr/src/app
 
@@ -10,4 +10,4 @@ RUN yarn install
 COPY . .
 
 EXPOSE 2775
-CMD ["yarn", "default"]
+CMD ["yarn", "start"]
